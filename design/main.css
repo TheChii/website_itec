@@ -52,13 +52,44 @@ option{
 	color: rgb(148, 116, 129);
 }
 footer{
+	font-family: 'Playfair Display', serif;
+	color: rgb(246, 241, 239);
+	background-color: rgb(148, 116, 129);
+	padding-top: 20px;
+	padding-bottom: 40px;
 	display: flex;
 	justify-content: space-around;
+}
+#buttons{
+	margin: 20px auto;
+	display: block;
+	width: fit-content;
+}
+#read img{
+	width: 20%;
+	display: block;
+	margin: 20px auto;
+}
+#poem{
+	display: block;
+	width: 50%;
+	margin: 30px auto;
+}
+#dev{
+	padding-top: 50px;
 }
 #about{
 	width: 50%;
 }
-#generate{
+#post, #save{
+	margin: 20px !important;
+	padding: 5px 30px !important;
+}
+#generateNew{
+	margin: auto !important;
+	display: block;
+}
+#generate, #save, #post, #generateNew{
 	width: fit-content;
 	text-align: center;
 	font-family: 'Playfair Display', serif;
@@ -69,7 +100,16 @@ footer{
 	border-radius: 8px;
 	margin: 20px auto;
 	padding: 5px 10px;
-
+	transition: 0.2s color ease-in;
+	transition: 0.2s background-color ease-in;
+	transition: 0.1s opacity ease-in;
+}
+#generate:hover, #save:hover, #post:hover, #generateNew:hover{
+	color: rgb(246, 241, 239);
+	background-color: rgb(148, 116, 129);
+}
+#generate:focus{
+	opacity: 0.6;
 }
 .text h6{
 	color: rgb(148, 116, 129);
@@ -117,7 +157,29 @@ footer{
 	color: rgb(148, 116, 129);
 	float: right;
 }
+@media screen and (max-width: 1000px){
+	#read img{
+		width: 40%;
+	}
+}
 @media screen and (max-width: 500px){
+	footer{
+		flex-direction: column;
+		justify-content: center;
+	}
+	#about{
+		margin: auto;
+		width: 70%;
+	}
+	#read img{
+		width: 50%;
+	}
+	#poem{
+		width: 70%;
+	}
+	#dev{
+		text-align: center;
+	}
 	.text{
 		width: fit-content;
 	}
