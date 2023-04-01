@@ -1,0 +1,30 @@
+.poems{
+	margin: 40px auto auto 20px!important;
+	display: grid;
+	grid-template-rows: auto auto auto;
+}
+.card{
+	font-family: 'Playfair Display', serif;
+	background-color: rgb(246, 241, 239);
+	border-radius: 20px;
+}
+.card-text{
+	overflow: hidden;
+	height: 100px;
+}
+.card-image-top{
+	border-radius: 8px !important;
+}
+.btn-primary, .btn-primary:hover, .btn-primary:focus{
+	width: fit-content;
+	text-align: center;
+	font-family: 'Playfair Display', serif;
+	font-size: 15px;
+	background-color: rgb(246, 241, 239);
+	color: rgb(148, 116, 129);
+	border: 1.5px solid rgb(148, 116, 129);
+	border-radius: 8px;
+	margin: 20px auto;
+	padding: 5px 10px;
+	box-shadow: none;
+}
