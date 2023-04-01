@@ -13,11 +13,39 @@ section{
 h1{
   text-indent: 40px;
 }
+.bi-trash-fill{
+  color: rgb(148, 116, 129);
+  float: right;
+  text-align: center;
+  padding: 0;
+  margin-top: 20px;
+  width: 30px;
+  height: 30px;
+  font-size: 22px;
+  border: 1px solid rgb(148, 116, 129);
+  border-radius: 4px;
+}
+.bi-trash-fill:hover{
+  color: rgb(220,53,69);
+  border-color: rgb(220,53,69);
+  cursor: pointer;
+}
 .bi-person-fill, #photo h1{
   display: inline;
 }
 .bi-person-fill{
   font-size: 60px;
+}
+#signout{
+  text-align: right;
+  padding-right: 10px;
+  width: 100%;
+  position: relative;
+  right: 0;
+}
+#signout:hover{
+  text-decoration: underline;
+  cursor: pointer;
 }
 #archive, #posts{
   margin-top: 20px;
@@ -26,6 +54,11 @@ h1{
   display: grid;
   grid-template-columns: auto auto auto;
   column-gap: 30px;
+}
+#photo i, #photo h1{
+  padding: 0;
+  line-height: 60px;
+  float: right;
 }
 .button{
   width: fit-content;
