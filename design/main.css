@@ -51,6 +51,13 @@ option{
 	background-color: rgb(246, 241, 239) !important;
 	color: rgb(148, 116, 129);
 }
+footer{
+	display: flex;
+	justify-content: space-around;
+}
+#about{
+	width: 50%;
+}
 #generate{
 	width: fit-content;
 	text-align: center;

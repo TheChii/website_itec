@@ -5,6 +5,28 @@ form{
 input{
   margin: 10px auto;
 }
+section{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+h1{
+  text-indent: 40px;
+}
+.bi-person-fill, #photo h1{
+  display: inline;
+}
+.bi-person-fill{
+  font-size: 60px;
+}
+#archive, #posts{
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  column-gap: 30px;
+}
 .button{
   width: fit-content;
   text-align: center;
@@ -34,4 +56,17 @@ input{
   font-size: 40px;
   font-family: 'Playfair Display', serif;
   text-align: center;
+}
+@media screen and (max-width: 1000px){
+  #archive, #posts{
+    grid-template-columns: auto auto;
+  }
+  .card{
+    width: 95% !important;
+  }
+}
+@media screen and (max-width: 500px){
+  #archive, #posts{
+    grid-template-columns: auto;
+  }
 }
