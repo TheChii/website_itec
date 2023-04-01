@@ -1,19 +1,27 @@
 .poems{
-	margin: 40px auto auto 20px!important;
+	margin: 40px auto auto auto!important;
 	display: grid;
-	grid-template-rows: auto auto auto;
+	grid-template-columns: auto auto auto; 
+	justify-content: center;
+	grid-column-gap: 40px;
 }
 .card{
 	font-family: 'Playfair Display', serif;
 	background-color: rgb(246, 241, 239);
 	border-radius: 20px;
+	margin: auto;
+	margin-bottom: 30px;
 }
 .card-text{
 	overflow: hidden;
 	height: 100px;
 }
+.card-body{
+	height: auto;
+}
 .card-image-top{
 	border-radius: 8px !important;
+
 }
 .btn-primary, .btn-primary:hover, .btn-primary:focus{
 	width: fit-content;
@@ -27,4 +35,17 @@
 	margin: 20px auto;
 	padding: 5px 10px;
 	box-shadow: none;
+}
+@media screen and (max-width: 900px){
+	.poems{
+		grid-template-columns: auto auto;
+	}
+	.card{
+		width: 95% !important;
+	}
+}
+@media screen and (max-width: 500px){
+	.poems{
+		grid-template-columns: auto;
+	}
 }

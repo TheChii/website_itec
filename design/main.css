@@ -5,9 +5,11 @@ body{
 nav{
 	box-shadow: 0px 2px 10px rgb(148, 116, 129);
 	background-color: rgb(246, 241, 239);
-	margin: auto;
-	width: 100%;
+	display: flex;
 	background-image: url("../images/gradient1.jpeg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
 }
 cite h1{
 	color: rgb(148, 116, 129);
