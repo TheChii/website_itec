@@ -74,6 +74,7 @@ footer{
 	display: block;
 	width: 50%;
 	margin: 30px auto;
+	text-align: center;
 }
 #dev{
 	padding-top: 50px;
@@ -116,19 +117,29 @@ footer{
 	background-color: rgb(246, 241, 239);
 	margin: 0;
 }
-#about{
-	margin-right: 0px;
+#about, #dev{
+	margin-right: 5pxpx;
+	margin-left: 5px;
 }
 .navbar-brand{
 	color: rgb(58, 44, 50) !important;
 }
 .text{
-	width: 15%;
-	margin: auto;
+	width: fit-content;
+	margin: 0 auto;
+	width: fit-content;
 	padding: 0;
+	justify-self: center;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+}
+.alert{
+	position: fixed;
+	top: 0;
+	right: 0;
+	font-family: 'Playfair Display', serif;
+	font-size: 20px;
 }
 .text p{
 	display: block; 
@@ -161,8 +172,6 @@ footer{
 	#read img{
 		width: 40%;
 	}
-}
-@media screen and (max-width: 500px){
 	footer{
 		flex-direction: column;
 		justify-content: center;
@@ -171,15 +180,18 @@ footer{
 		margin: auto;
 		width: 70%;
 	}
+	#dev{
+		text-align: center;
+	}
+}
+@media screen and (max-width: 500px){
 	#read img{
 		width: 50%;
 	}
 	#poem{
 		width: 70%;
 	}
-	#dev{
-		text-align: center;
-	}
+	
 	.text{
 		width: fit-content;
 	}

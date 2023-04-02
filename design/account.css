@@ -90,6 +90,7 @@ h1{
   font-family: 'Playfair Display', serif;
   text-align: center;
 }
+
 @media screen and (max-width: 1000px){
   #archive, #posts{
     grid-template-columns: auto auto;
