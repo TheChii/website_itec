@@ -1,0 +1,17 @@
+img{
+	width: 300px;
+	margin: auto;
+}
+#poemRead p{
+	text-align: center;
+	margin: auto;
+	font-family: 'Playfair Display', serif;
+	font-size: 20px;
+	color: rgb(148, 116, 129);
+}
+#poemRead{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 70px auto;
+}
