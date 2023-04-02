@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -14,11 +15,13 @@
     <link rel="stylesheet" type="text/css" href="../design/main.css">
     <link rel="stylesheet" type="text/css" href="../design/fonts.css">
     <link rel="stylesheet" type="text/css" href="../design/forum.css">
+
+    
   </head>
   <body>
   <nav class="navbar navbar-expand-lg d-flex justify-content-evenly">
       <div class="container">
-        <a class="navbar-brand" href="../index.html">
+        <a class="navbar-brand" href="#">
           Poet<i class="fa-solid fa-pencil fa-bounce"></i>ca</a
         >
         <button
@@ -36,26 +39,52 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
+              <a class="nav-link active" aria-current="page" href="../index.php">Home</a>
             </li>
-            <li><a class="nav-link" href="profile.html">Account</a></li>
+            <li><a class="nav-link" href="account.php" style="padding-left: 0;">Account</a></li>
             <li class="nav-item">
-              <a class="nav-link" href="forum.html">Forum</a>
+              <a class="nav-link" href="forum.php">Forum</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
       <div class="poems">
-            <div class="card" style="width: 18rem;">
-            <img src="../images/copac.jpeg" class="card-img-top" alt="an image related to the poem">
-            <div class="card-body">
-              <h5 class="card-title">Poem title</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus metus tellus, feugiat id dui vitae, suscipit ultricies erat. Morbi et ultricies dolor, quis imperdiet nulla. Fusce efficitur, justo a luctus blandit, ipsum eros tristique risus, et sodales ligula eros quis elit. Fusce porta sem quis metus vehicula placerat. Nulla sed augue non odio maximus ullamcorper quis nec mi. Nam et tortor in mauris volutpat semper id et lorem. Quisque scelerisque metus sed consequat iaculis. Nam aliquam sem eget malesuada cursus. Integer non urna elit. Cras dictum commodo mauris eu convallis. Suspendisse eu pharetra tellus.</p>
-              <a href="#" class="btn btn-primary">Read Poem</a>
-            </div>
+            
+      <?php
+            require ("functions.php");
+            $dbhost = "localhost";
+            $dbuser = "root";
+            $dbpass = "";
+            $dbname = "poetica";
+            $con = mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
 
-        </div>
+            $usrname = $_SESSION["username"];
+
+            if(!$usrname) echo"failed";
+
+            $query = "SELECT * FROM poems WHERE published = 1 ORDER BY id DESC";
+            $result = $con->query($query);
+        
+            if($result -> num_rows > 0){
+              while($row = $result->fetch_assoc()) {
+                //echo $row['content'] . "<br>";
+                $json = json_decode($row['img'], true);
+                $new_url = $json["data"][0]["url"];
+                $card_theme = $row['theme'];
+                if($card_theme == "any") $card_theme = "diverse";
+                $card_content = str_replace("None<br>", "", $row['content']);
+                
+                echo '<div class="card" style="width: 18rem;"> <img src='.$new_url.' class="card-img-top" alt="an image related to the poem"> <div class="card-body"><h5 class="card-title">'.$card_theme.'</h5><p class="card-text">'.$card_content.'</p><a href="#" class="btn btn-primary">Read Poem</a><i class="bi bi-trash-fill"></i></div></div>';
+              }
+            }
+            else{
+        
+            }   
+            
+          ?>
+
+        
         <div class="card" style="width: 18rem;">
             <img src="../images/copac.jpeg" class="card-img-top" alt="an image related to the poem">
             <div class="card-body">
@@ -130,5 +159,6 @@ With our advanced algorithm, you can generate unique and personalized poems in s
       crossorigin="anonymous"
     ></script>
     <script src="https://kit.fontawesome.com/74d2e4807b.js" crossorigin="anonymous"></script>
+            
   </body>
 </html>
