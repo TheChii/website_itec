@@ -45,7 +45,7 @@ if(isset($_POST['submit'])){
 	
 	$dom = new DOMDocument('1.0', 'utf-8');
 	
-	$api_key = "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";
+	$api_key = "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";
 	$open_ai = new OpenAi($api_key);
 	
 	if(empty($_POST['keywords'])){
